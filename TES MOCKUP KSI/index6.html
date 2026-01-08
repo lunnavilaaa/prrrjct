@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Scentside | Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:#f9f9f9;color:#111;min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;}
+.container{max-width:1000px;width:100%;}
+
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  padding:16px 0;
+  border-bottom:2.5px solid #e5e5e5; /* border tebal */
+  margin-bottom:30px;
+}
+.logo{font-family:'Playfair Display',serif;font-size:26px;}
+.header-right{margin-left:auto;display:flex;gap:20px;align-items:center;}
+.user-icon,.cart{font-size:20px;cursor:pointer;}
+
+/* CHECKOUT CARD */
+.checkout-card{
+  display:flex;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+  overflow:hidden;
+  width:100%;
+  border:2.5px solid #e5e5e5; /* border tebal */
+}
+.checkout-left,.checkout-right{flex:1;padding:30px;}
+.checkout-left h2,.checkout-right h2{font-family:'Playfair Display',serif;margin-bottom:15px;font-size:22px;}
+
+/* INPUT, TEXTAREA, SELECT */
+label{display:block;margin-top:10px;font-size:14px;}
+input,textarea,select{
+  width:100%;
+  padding:10px;
+  margin-top:4px;
+  border:2.5px solid #ccc; /* border tebal */
+  border-radius:8px;
+  font-size:14px;
+  transition:0.3s;
+}
+input:focus,textarea:focus,select:focus{
+  border-color:#111;
+  outline:none;
+}
+
+/* ORDER SUMMARY */
+.order-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+  border:2.5px solid #e5e5e5; /* border tebal */
+  border-radius:10px;
+  padding:8px;
+}
+.order-item img{
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-right:10px;
+}
+.order-info{flex:1;}
+.order-info p{font-size:13px;color:#666;margin:2px 0;}
+.total{font-size:18px;font-weight:600;margin:15px 0;}
+.place-order{
+  padding:12px;
+  width:100%;
+  border:none;
+  border-radius:20px;
+  background:#111;
+  color:#fff;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.place-order:hover{background:#333;}
+
+@media(max-width:900px){
+  .checkout-card{flex-direction:column;}
+  .checkout-left,.checkout-right{padding:20px;}
+  .order-item{flex-direction:column;align-items:flex-start;}
+  .order-item img{margin-bottom:5px;}
+}
+
+textarea {resize: none;}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">Scentside</div>
+    <div class="header-right">
+      <div class="user-icon"><i class="fa fa-user"></i></div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT CARD -->
+  <div class="checkout-card">
+    <!-- LEFT: SHIPPING & PAYMENT -->
+    <div class="checkout-left">
+      <h2>Shipping & Payment</h2>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Name">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Your Email">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Your Number">
+      <label for="address">Shipping Address</label>
+      <textarea placeholder="Your Address"></textarea>
+      <label for="payment">Payment Method</label>
+      <select id="payment">
+        <option>Bank Transfer</option>
+        <option>Credit/Debit Card</option>
+        <option>E-wallet</option>
+      </select>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div class="checkout-right">
+      <h2>Order Summary</h2>
+      <div class="order-item">
+        <img src="Miss Dior perfume at Nordstrom ❤️💐.jpeg" alt="Miss Dior">
+        <div class="order-info">
+          <p>Miss Dior</p>
+          <p>Qty: 1</p>
+          <p>Rp 1.500.000</p>
+        </div>
+      </div>
+      <div class="order-item">
+        <img src="CHANEL _ COCO MADEMOISELLE - Eau De Parfum Intense.jpeg" alt="Chanel Coco">
+        <div class="order-info">
+          <p>Chanel Coco Mademoiselle</p>
+          <p>Qty: 1</p>
+          <p>Rp 2.000.000</p>
+        </div>
+      </div>
+      <div class="total">Total: Rp 3.500.000</div>
+      <button class="place-order">Place Order</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
